@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://Route.accidents.com"
+           targetNamespace="http://Route.accidents.com"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://Route.accidents.com ">
+    <xs:element name="getAccidentsRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAccidentsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:accidents"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="accidents">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:Accident" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Accident">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+                <xs:element name="raisons" type="xs:string"/>
+                <xs:element name="accidents" type="xs:integer"/>
+                <xs:element name="morts" type="xs:integer"/>
+                <xs:element name="blesses" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
